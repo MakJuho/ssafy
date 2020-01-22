@@ -1,0 +1,10 @@
+package algo_basic.day1.io;
+
+public class OutputTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

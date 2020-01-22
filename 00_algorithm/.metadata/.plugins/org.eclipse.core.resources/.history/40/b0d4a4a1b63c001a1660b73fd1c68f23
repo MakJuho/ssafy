@@ -1,0 +1,35 @@
+package algo_basic.day1.io;
+
+import java.util.Scanner;
+
+public class ScannerTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		read0();
+		read1();
+	}
+	
+	public static void read0() {
+		Scanner scanner = new Scanner(System.in);
+		// 다음 문자열 있어 ,  공백 
+		while(scanner.hasNext()) {
+			// 있으면 가져와봐
+			String str = scanner.next();
+			System.out.println(str);
+		}
+	}
+	
+	public static void read1() {
+		String src = "123 + 234";
+		
+		Scanner scanner = new Scanner(System.in);
+		scanner = new scanner(src);
+		// 다음 문자열 있어 ,  공백 
+		int num1 = scanner.nextInt();
+		String oper = scanner.next();
+		int num2 = scanner.nextInt();
+
+	}
+
+}

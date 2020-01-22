@@ -1,0 +1,21 @@
+package algo_basic.day1;
+
+import java.util.Scanner;
+
+public class SWEA_2056_D1_연월일달력 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+	}
+
+	
+	private static void make_input() {
+		
+	}
+		
+	
+}

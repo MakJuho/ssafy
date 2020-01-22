@@ -1,0 +1,22 @@
+package algo_basic.day1;
+
+public class P16_Exercise {
+	private static int[] data = {7,4,2,0,0,6,0,7,0};
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int max =0;
+		for(int i=0; i<data.length; i++) {
+			int cnt=0;
+			for(int j=i+1; j<data.length; j++) {
+				if(data[i] > data[j]) {
+					cnt++;
+				}
+			}
+			max = Math.max(cnt,max);
+		}
+		System.out.println(max);
+		
+	}
+
+}

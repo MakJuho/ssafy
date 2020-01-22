@@ -1,0 +1,19 @@
+package algo_basic.day1.io;
+
+public class StringSplitTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		split1();
+	}
+	public static void split1() {
+		String src = "10, 20, 30";
+		String[] splited = src.split(",");
+		
+		int sum =0;
+		for(int i=0; i<splited.length; i++) {
+			sum += Integer.parsedInt(splited[i]);
+		}
+	}
+
+}

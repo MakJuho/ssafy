@@ -1,0 +1,14 @@
+package algo_basic.day1.io;
+
+public class ScannerTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		read0();
+	}
+	
+	public static void read0() {
+		System.out.println("Hello Java!");
+	}
+
+}

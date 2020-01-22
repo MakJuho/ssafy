@@ -1,0 +1,10 @@
+package algo_basic.day1;
+
+public class SWEA_2050_D1_알파벳을숫자로변환 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

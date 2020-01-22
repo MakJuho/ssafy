@@ -1,0 +1,14 @@
+package algo_basic.day1;
+
+public class SWEA_2063_D1_중간값찾기 {
+
+	private static int[] mid = {}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+}

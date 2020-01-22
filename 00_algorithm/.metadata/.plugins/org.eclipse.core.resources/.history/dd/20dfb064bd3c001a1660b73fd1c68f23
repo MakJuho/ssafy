@@ -1,0 +1,15 @@
+package algo_basic.day1.io;
+
+public class OutputTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		printGugu5();
+	}
+	public static void printGugu5() {
+		for(int i=1; i<=9; i++) {
+			System.out.println(i*5);
+		}
+	}
+
+}

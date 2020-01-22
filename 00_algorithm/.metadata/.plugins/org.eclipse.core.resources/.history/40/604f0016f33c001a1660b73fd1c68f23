@@ -1,0 +1,10 @@
+package algo_basic.day1;
+
+public class P43_countingSort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

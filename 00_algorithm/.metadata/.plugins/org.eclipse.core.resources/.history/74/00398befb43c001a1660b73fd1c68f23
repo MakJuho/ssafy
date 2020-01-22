@@ -1,0 +1,23 @@
+package algo_basic.day1.io;
+
+import java.util.Scanner;
+
+public class ScannerTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		read0();
+	}
+	
+	public static void read0() {
+		Scanner scanner = new Scanner(System.in);
+		
+		while(scanner.hasNext()) {
+			String str = scanner.next();
+			System.out.println(str);
+		}
+		
+		
+	}
+
+}

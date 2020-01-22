@@ -1,0 +1,14 @@
+package algo_basic.day1;
+
+import java.util.Scanner;
+
+public class SWEA_1204_D2_최빈수구하기 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+	}
+
+}

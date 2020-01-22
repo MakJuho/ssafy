@@ -1,0 +1,10 @@
+package algo_basic.day1;
+
+public class Solution_2058_D1_자릿수더하기 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

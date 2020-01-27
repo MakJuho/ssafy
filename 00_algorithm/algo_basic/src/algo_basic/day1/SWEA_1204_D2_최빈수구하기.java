@@ -2,7 +2,7 @@ package algo_basic.day1;
 
 import java.util.Scanner;
 
-public class SWEA_1204_D2_최빈수구하기 {
+public class SWEA_1204_D2_�ֺ�����ϱ�{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -10,9 +10,6 @@ public class SWEA_1204_D2_최빈수구하기 {
 		StringBuilder sb = new StringBuilder();
 		int TC = sc.nextInt();
 		int[] nums = new int[1000];
-		
-		
-		
 		
 	
 		for(int t=0; t<TC; t++) {
@@ -25,13 +22,13 @@ public class SWEA_1204_D2_최빈수구하기 {
 			
 			for(int i=0; i<nums.length; i++) {
 				nums[i] = sc.nextInt();
-				System.out.println(nums[i]);
+				//System.out.println(nums[i]);
 				checkBox[nums[i]]++;
 			}
 			
 			for(int j=1; j<checkBox.length; j++) {
 				//max = Math.max(max, checkBox[j]);
-				if(max < checkBox[j]) {
+				if(max <= checkBox[j]) {
 					max = checkBox[j];
 					point = j;
 				}

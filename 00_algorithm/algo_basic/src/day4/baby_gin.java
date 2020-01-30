@@ -3,12 +3,16 @@ package day4;
 import java.util.Arrays;
 
 public class baby_gin {
+//	private static String[] nums = {"101123", "667767", "054060"};
 	private static String nums = "101123";
+	private static int[] num = {1,0,1,1,2,3};
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		checkBaby_gin(0, new char[6], new boolean[6]);
-		System.out.println(nums+"은 isBabyGin이 아닙니다.");
+//		checkBaby_gin(0, new char[6], new boolean[6]);
+		greedyBaby_gin();
+//		System.out.println(nums+"은 isBabyGin이 아닙니다.");
 	}
+	
 	public static void checkBaby_gin(int current, char[] temp, boolean[] visited) {
 		//base case
 		if(current == 6) {
@@ -50,4 +54,44 @@ public class baby_gin {
 		
 	}
 
+	public static void greedyBaby_gin() {
+		int[] checkBox = new int[10];
+		
+		for(int i=0; i<num.length; i++) {
+			checkBox[num[i]]++;
+		}
+		
+//		System.out.println(Arrays.toString(checkBox));
+		if(checkgBg(checkBox)) {
+			System.out.println(Arrays.toString(num)+"은 baby_gin 입니다.");
+		}else
+			System.out.println(Arrays.toString(num)+"은 baby_gin이 아닙니다.");
+		
+	}
+	private static boolean checkgBg(int[] checkBox) {
+		int cnt = 0;
+		for(int i=0; i<checkBox.length; i++) {
+			if(checkBox[i] == 3) {
+				
+				checkBox[i] =-3;
+				cnt++;
+			}else if(checkBox[i] >= 1) {
+				if(checkBox[i+1]>=1 && checkBox[i+2]>=1) {
+					// run , pass
+					cnt++;
+					checkBox[i]--;
+					checkBox[i+1]--;
+					checkBox[i+2]--;
+				}else {
+					return false;
+				}
+			}
+		}
+		
+		if(cnt == 2) {
+			return true;
+		}
+		return false;
+	}
+	
 }

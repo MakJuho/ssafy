@@ -42,7 +42,7 @@ public class Child extends Parent{
 	}
 	
 	@Override // annotation : 부모 메소드와 동일해야 되는것 (리턴타입, 메소드이름, 파라미터 리스트)
-	void printName() {
+	protected void printName() {
 		System.out.println("name: Tomson");
 	}
 

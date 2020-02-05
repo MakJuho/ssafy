@@ -65,10 +65,11 @@ public class Calculator {
 				// 숫자
 				postfixNotation.add(token);
 			}else if(token == '(') {
-				st.add(token);
+				st.push(token);
 			}else if(token == ')') {
+				char top = st.pop();
 				while(true) {
-					char top = st.pop();
+					
 					if(top == '(') {
 						break;
 					}else {
@@ -80,7 +81,7 @@ public class Calculator {
 				while(!st.isEmpty()) {
 					char top = st.peek(); 
 					if(getInStackOrder(top) >= tokenOrder) {
-						postfixNotation.add(st.peek());
+						postfixNotation.add(st.pop());
 					}else {
 						break;
 					}
@@ -103,6 +104,7 @@ public class Calculator {
 		Stack<Integer> calcStack = new Stack<>();
 				
 		for(Character c : postfixNotation) {
+			
 			if(getInStackOrder(c) == 0) {
 				calcStack.push(c-'0');
 			}else {
@@ -113,6 +115,7 @@ public class Calculator {
 					
 				}else if(c == '-') {
 					calcStack.push(num2-num1);
+					calcStack.push(num2*num1);
 				}else if(c == '*') {
 					calcStack.push(num2*num1);
 				}else if(c == '/') {
@@ -120,6 +123,7 @@ public class Calculator {
 				}
 				
 			}
+			
 		}
 		
 		

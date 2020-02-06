@@ -1,4 +1,4 @@
-package SWExpert;
+package SWEA;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

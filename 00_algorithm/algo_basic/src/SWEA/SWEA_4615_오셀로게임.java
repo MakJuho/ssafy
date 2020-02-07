@@ -9,7 +9,17 @@ public class SWEA_4615_오셀로게임 {
 	private static int[] dx = {0,-1,-1,-1,0,1,1,1}; 
 	private static int[] dy = {1,1,0,-1,-1,-1,0,1};
 	
-	
+	class Pair{
+		int x;
+		int y;
+		public Pair(int x, int y) {
+			super();
+			this.x = x;
+			this.y = y;
+		}
+		
+		
+	}
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		System.setIn(new FileInputStream("res\\4615.txt"));
@@ -29,59 +39,18 @@ public class SWEA_4615_오셀로게임 {
 			board[N/2][N/2] = 2;
 					
 			for(int i=0; i<cnt; i++) {
-				int r = sc.nextInt()-1;
-				int c = sc.nextInt()-1;
-				int color = sc.nextInt();
 				
-				// 확인 후 조건이 맞는 다면 바둑돌을 둔다.
-				//board[r][c] = color;
-				for(int dir=0; dir<dx.length; dir++) {
-					// 경계선 초과 했는가? 바둑돌이 없는가(0인지?)? 있다면 그 방향에 같은 색의 바둑돌이 나오는가?
-					if((r+dx[dir]) < N && (c+dy[dir]) < N && (r+dx[dir]) >=0 && (c+dy[dir]) >=0 
-							&& board[r+dx[dir]][c+dy[dir]]!=0) {
-						
-//						int goalDolColor = board[r+dir][c+dir]; // 목표 돌 색깔
-						int nr=r, nc=c;
-						
-						while(color != board[nr][nc]) {
-							
-							nr +=dx[dir];
-							nc +=dy[dir];
-							
-							// 찾는 게 범위 확인
-							if(nr < N && nc < N && nr >=0 && nc >=0) {
-								if(board[nr][nc] == 0) // 돌이 존재하지 않을때
-									break;
-								else {
-									//확정
-									board[nr][nc] = color;
-									board[r][c] = color;
-									for(int k=0; k<board.length; k++) {
-										for(int j=0; j<board[k].length; j++) {
-											System.out.print(board[k][j]+" ");
-										}
-										System.out.println();
-									}
-									System.out.println();
-									
-								}
-							}else {
-								// 범위초과
-								break;
-							}
-							
-							
-							
-						}
-						
-						
-						
-					}else
-						continue;
-					
-		
-				}
-			
+				int c = sc.nextInt()-1;
+				int r = sc.nextInt()-1;
+				
+				int color = sc.nextInt(); // 1: 검정 , 2: 흰색
+
+				// 방향 별로 탐색
+//				1. 한칸만 이동해서 경계선 초과했는지 ? 0인지? 아니면 반대 색 돌을 가지고 있는지
+//				2. 같은 색 나올 때까지 탐색
+//				3. 같은 색 나오면 좌표를 기억해놨다가 시작 점부터 그 사이 좌표 색깔 모두 변경. for문 두번
+				
+				
 				
 				
 			}

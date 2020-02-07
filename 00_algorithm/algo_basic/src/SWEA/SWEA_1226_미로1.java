@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class SWEA_1226_미로1 {
 
 	private static int [] dx = {0,1,0,-1};
-	private static int [] dy = {1,0,1,0};
+	private static int [] dy = {1,0,-1,0};
 	private static int [][] map= new int[16][16];
 			
 	private static List<Pair>[] graph;
@@ -18,11 +18,12 @@ public class SWEA_1226_미로1 {
 	public static void main(String[] args) throws FileNotFoundException {
 		System.setIn(new FileInputStream("res\\1226.txt"));
 		Scanner sc = new Scanner(System.in);
+		StringBuilder sb = new StringBuilder();
 		
 		int TC = 10;
 	
-		for(int t=1; t<=TC; t++) {
-			
+		for(int t=1; t<=10; t++) {
+			sb.append("#").append(t).append(" ");
 			int k= sc.nextInt();
 			
 			for(int r=0; r<16; r++) {
@@ -42,11 +43,12 @@ public class SWEA_1226_미로1 {
 			
 			boolean anw = bfs();
 			if(anw) {
-				System.out.println("성공!");
+				sb.append(1).append("\n");
 			}else {
-				System.out.println("실패!");
+				sb.append(0).append("\n");
 			}
 		}
+		System.out.println(sb);
 	}
 
 	
@@ -58,8 +60,7 @@ public class SWEA_1226_미로1 {
 		Pair pos = new Pair(1,1);
 		
 		boolean visited[][] = new boolean[16][16];
-		int front;
-		int rear;
+
 		
 		/*1. 시작점 1,1로 지정
 		2. 우하좌상을 검색해서 0인 곳을 검색한다.
@@ -71,41 +72,46 @@ public class SWEA_1226_미로1 {
 		// 시작
 		queue.add(pos);
 		
+		//System.out.println(pos);
+		while(!queue.isEmpty()) {
 	
-			while(!queue.isEmpty()) {
-				pos = queue.poll(); // 큐에서 제거
-				visited[pos.x][pos.y]=true; // 해당 위치에 참
+			
+			pos = queue.poll(); // 큐에서 제거
+			//System.out.println(pos);
+			visited[pos.x][pos.y]=true; // 해당 위치에 참
+			
+			for(int i=0; i<4; i++) {
 				
-				for(int i=0; i<4; i++) {
+				// visited가 false이고, 길이 있을 때
+				if(!visited[pos.x+dx[i]][pos.y+dy[i]] && map[pos.x+dx[i]][pos.y+dy[i]]==0) {
 					
-					// visited가 false이고, 길이 있을 때
-					if(!visited[pos.x+dx[i]][pos.y+dy[i]] && map[pos.x+dx[i]][pos.y+dy[i]]==0) {
-						
-						Pair pos2 = new Pair(pos.x+dx[i], pos.y+dy[i]);
-						
-						/*pos.x = pos.x+dx[i]; // 이동
-						pos.y = pos.y+dy[i];*/
-						
-						
-						queue.add(pos2); // 위치 큐에 추가.
-						
-					// visited가 true일 때
-					}else if(visited[pos.x+dx[i]][pos.y+dy[i]]) {
-						continue;
-					// 길이 막혀있을 때
-					}else if(map[pos.x+dx[i]][pos.y+dy[i]] ==1) {
-						
-						continue;
-					// 값을 찾았을 때
-					}else if(map[pos.x+dx[i]][pos.y+dy[i]] ==3) {
-						return true;
-					}
+					Pair pos2 = new Pair(pos.x+dx[i], pos.y+dy[i]);
 					
+					/*pos.x = pos.x+dx[i]; // 이동
+					pos.y = pos.y+dy[i];*/
+					
+					
+					queue.add(pos2); // 위치 큐에 추가.
+					
+				// visited가 true일 때
+				}else if(visited[pos.x+dx[i]][pos.y+dy[i]]) {
+					continue;
+				// 길이 막혀있을 때
+				}else if(map[pos.x+dx[i]][pos.y+dy[i]] ==1) {
+					
+					continue;
+				// 값을 찾았을 때
+				}else if(map[pos.x+dx[i]][pos.y+dy[i]] ==3) {
+					return true;
 				}
+				
 			}
+		}
 			
 		return false;
 	}
+	
+	
 	static class Pair{
 		int x;
 		int y;
@@ -114,6 +120,11 @@ public class SWEA_1226_미로1 {
 		
 			this.x = x;
 			this.y = y;
+		}
+		
+		@Override
+		public String toString() {
+			return "Pair [x=" + x + ", y=" + y + "]";
 		}
 	}
 }

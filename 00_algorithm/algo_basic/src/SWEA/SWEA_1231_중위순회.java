@@ -19,6 +19,7 @@ public class SWEA_1231_중위순회 {
 			for(int i=0; i<N; i++) {
 				int nodeNum= sc.nextInt();
 				char ch = sc.next().charAt(0);
+				addNode(nodeNum, ch, nums);
 				String nums = sc.nextLine();
 				nums.split(" ");
 				System.out.println(nums);
